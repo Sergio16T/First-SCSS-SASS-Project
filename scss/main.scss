@@ -1,0 +1,72 @@
+// First SASS 
+
+// Variables 
+$black: #333;
+$pale: #d2e1dd; 
+$pink: #c69; 
+$blue: #036; 
+
+$font-stack: monospace; 
+$font-size: 14px; 
+
+
+
+// Mixins 
+@mixin circle($radius, $height, $width, $background, $color){
+  -webkit-border-radius: $radius; 
+  -moz-border-radius: $radius; 
+  -ms-border-radius: $radius; 
+
+  height: $height; 
+  width: $width; 
+
+  line-height: 2em; 
+  text-align: center; 
+
+  background-color: $background; 
+  color: $color; 
+
+  margin: 0 auto;
+  
+}
+//Styles 
+body {
+  background-color: $pale;
+  color: $black;
+  font-family: $font-stack; 
+  font-size: $font-size; 
+
+}
+.about-me { 
+  background-color: white; 
+  width: 760px; 
+  margin: -60px auto 0; 
+  padding: 40px; 
+  box-sizing: border-box;
+  position: relative; 
+  z-index: -2;
+  // without border-box paddding pushes it 40px wider this way padding is within width of 760
+    h2 {
+      font-size: $font-size +2; 
+    }
+}
+header {
+    @include circle(100%, 200px, 200px, $blue, white); 
+
+  h1 {
+    font-size: $font-size +2;
+    padding-top: 35%;
+    letter-spacing: .1em; 
+  }
+}
+footer {
+  @include circle(100%, 150px, 150px, $black, $pale);
+  font-size: $font-size -3; 
+  position: relative;
+  z-index: -4;
+  margin-top: -60px;
+    p {
+      padding-top: 40%; 
+    }
+   
+}
